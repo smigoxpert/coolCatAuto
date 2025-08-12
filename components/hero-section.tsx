@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Star, Shield, Users, Wrench } from "lucide-react"
+import { Star, Shield, Users, Wrench, Clock, Award } from "lucide-react"
 
 export function HeroSection() {
   return (
@@ -11,7 +11,7 @@ export function HeroSection() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
         style={{
-    backgroundImage: `url('https://images.pexels.com/photos/631522/pexels-photo-631522.jpeg')`,
+          backgroundImage: `url('https://images.pexels.com/photos/631522/pexels-photo-631522.jpeg')`,
         }}
       />
 
@@ -20,56 +20,93 @@ export function HeroSection() {
           {/* Main Content */}
           <div className="space-y-8">
             <div className="space-y-4">
-              <Badge variant="secondary" className="bg-accent text-accent-foreground font-semibold">
-                Family Owned Since 1987
-              </Badge>
+              <div className="flex flex-wrap gap-2">
+                <Badge variant="secondary" className="bg-accent text-accent-foreground font-semibold">
+                  Family Owned Since 1987
+                </Badge>
+                <Badge variant="outline" className="border-primary text-primary font-semibold">
+                  37+ Years of Excellence
+                </Badge>
+              </div>
+
               <h1 className="font-serif text-4xl lg:text-6xl font-bold leading-tight">
-                Keeping Phoenix <span className="text-primary">Rolling</span>
+                Phoenix's Most <span className="text-primary">Trusted</span> Auto Repair
               </h1>
-              <div className="space-y-2">
-                <p className="text-xl text-gray-300">Expert Care for Imports & Domestics</p>
-                <p className="text-lg text-gray-400 italic">Servicio experto para autos importados y nacionales</p>
+
+              <div className="space-y-3">
+                <p className="text-xl text-gray-200 font-medium">
+                  Expert diagnostics, honest pricing, guaranteed results for all makes & models
+                </p>
+                <p className="text-lg text-gray-300">
+                  From quick oil changes to complex engine repairs - we fix it right the first time
+                </p>
+                <p className="text-lg text-gray-400 italic">
+                  Diagnósticos expertos, precios honestos, resultados garantizados
+                </p>
               </div>
             </div>
 
-            {/* Trust Indicators */}
-            <div className="flex flex-wrap gap-6">
-              <div className="flex items-center space-x-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="flex items-center space-x-3 bg-white/5 rounded-lg p-3">
                 <div className="flex text-accent">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="h-5 w-5 fill-current" />
                   ))}
                 </div>
-                <span className="font-semibold">4.8 Google Rating</span>
+                <div>
+                  <span className="font-semibold block">4.8/5 Stars</span>
+                  <span className="text-sm text-gray-400">200+ Google Reviews</span>
+                </div>
               </div>
-              <div className="flex items-center space-x-2">
-                <Shield className="h-5 w-5 text-accent" />
-                <span>ASE Certified</span>
+
+              <div className="flex items-center space-x-3 bg-white/5 rounded-lg p-3">
+                <Award className="h-6 w-6 text-accent" />
+                <div>
+                  <span className="font-semibold block">ASE Certified</span>
+                  <span className="text-sm text-gray-400">Master Technicians</span>
+                </div>
               </div>
-              <div className="flex items-center space-x-2">
-                <Users className="h-5 w-5 text-accent" />
-                <span>Se Habla Español</span>
+
+              <div className="flex items-center space-x-3 bg-white/5 rounded-lg p-3">
+                <Clock className="h-6 w-6 text-accent" />
+                <div>
+                  <span className="font-semibold block">Same Day Service</span>
+                  <span className="text-sm text-gray-400">Most Repairs</span>
+                </div>
+              </div>
+
+              <div className="flex items-center space-x-3 bg-white/5 rounded-lg p-3">
+                <Users className="h-6 w-6 text-accent" />
+                <div>
+                  <span className="font-semibold block">Bilingual Team</span>
+                  <span className="text-sm text-gray-400">Se Habla Español</span>
+                </div>
               </div>
             </div>
 
-            {/* CTA Buttons */}
+            
+
             <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 size="lg"
-                className="bg-primary hover:bg-primary/90 text-white font-semibold px-8"
+                className="bg-primary hover:bg-primary/90 text-white font-semibold px-8 py-4 text-lg"
                 onClick={() => document.getElementById("appointment")?.scrollIntoView({ behavior: "smooth" })}
               >
-                Book Your Appointment
+                Schedule Today - Free Estimate
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-gray-900 bg-transparent"
+                className="border-white text-white hover:bg-white hover:text-gray-900 bg-transparent py-4 text-lg"
                 onClick={() => document.getElementById("appointment")?.scrollIntoView({ behavior: "smooth" })}
               >
-                Agendar en Español
+                Agendar Hoy - Estimado Gratis
               </Button>
             </div>
+
+            <p className="text-sm text-gray-400 text-center sm:text-left">
+              ⚡ Most appointments available within 24 hours • Call (602) 354-7255 for same-day service
+            </p>
           </div>
 
           {/* Services Preview */}
