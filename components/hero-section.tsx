@@ -11,7 +11,7 @@ export function HeroSection() {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
         style={{
-          backgroundImage: `url('https://images.pexels.com/photos/29410748/pexels-photo-29410748.jpeg')`,
+          backgroundImage: `url('https://images.pexels.com/photos/631522/pexels-photo-631522.jpeg')`,
         }}
       />
 
@@ -24,7 +24,7 @@ export function HeroSection() {
                 <Badge variant="secondary" className="bg-accent text-accent-foreground font-semibold">
                   Family Owned Since 1987
                 </Badge>
-                <Badge variant="outline" className="border-primary text-primary font-semibold">
+                <Badge variant="secondary" className="bg-accent text-white text-accent-foreground font-semibold">
                   37+ Years of Excellence
                 </Badge>
               </div>
